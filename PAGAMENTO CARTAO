@@ -1,0 +1,19 @@
+
+public class PagamentoCartao implements Pagamento {
+
+    double valor;
+
+    public PagamentoCartao(double valor) {
+        this.valor = valor;
+    }
+
+    @Override
+    public double calcularPagamento() {
+        return valor + (valor * 0.05);
+    }
+
+    @Override
+    public String emitirRecibo() {
+        return "Pagamento no cartão.\nValor final: R$ " + calcularPagamento();
+    }
+}
